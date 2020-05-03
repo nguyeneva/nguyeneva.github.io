@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Image Classification with Convolutional Neural Network
-subtitle: 
+subtitle:
 tags: [CNN, deep learning, python, tensorflow, matplotlib]
 ---
 
@@ -9,13 +9,13 @@ The purpose of the project is to develop a Convolutional Neural Network (CNN) to
 
 __Methodology__:
 1. Load the data and flatten the input to feed into the model using tf.keras.layers.Flatten()
-2. Compile the model using model.compile() 
+2. Compile the model using model.compile()
 3. Train the model with the training data and training labels using model.fit()
 4. Evaluate the model with the test dataset and print a few of the test image labels with predictions to test accuracy
 
 __CIFAR-10 Data__:
 
-Data set retrieved from Keras package. The CIFAR-10 data set consists of 60,000 color images in 10 classes. The data set contains 50,000 training images and 10,000 test images. 
+Data set retrieved from Keras package. The CIFAR-10 data set consists of 60,000 color images in 10 classes. The data set contains 50,000 training images and 10,000 test images.
 
 Image Classes:
 * Airplane
@@ -31,8 +31,8 @@ Image Classes:
 
 
 Relevant data set links:  
-https://keras.io/datasets/  
-https://www.cs.toronto.edu/~kriz/cifar.html
+[https://keras.io/datasets/](https://keras.io/datasets/)
+[https://www.cs.toronto.edu/~kriz/cifar.html](https://www.cs.toronto.edu/~kriz/cifar.html)
 
 
 
@@ -41,35 +41,28 @@ A model with epoch of 10 and a batch size of 64 with a test loss of 1.5843.
 
 ### 1. Loading CIFAR-10 Data
 
-
-```python
-import tensorflow as tf 
+{% highlight python linenos %}
+import tensorflow as tf
 import mitdeeplearning as mdl
 import matplotlib.pyplot as plt
 import numpy as np
 import random
 from tqdm import tqdm
 from keras.datasets import cifar10
-```
-
-    Using TensorFlow backend.
-
+{% endhighlight %}
 
 
 ```python
 (x_train, y_train), (x_test, y_test) = cifar10.load_data()
 ```
 
-
 ```python
 np.shape(x_train)
 ```
 
-
-
-
-    (50000, 32, 32, 3)
-
+```
+(50000, 32, 32, 3)
+```
 
 
 There are 50,000 32x32 colored images in the training set.
@@ -81,7 +74,7 @@ Let's visualize a few of the training images with corresponding training labels 
 """ The training and testing labels are numeric so we will need to
 pair them with a class_names vector """
 
-class_names = ['airplane', 'automobile', 'bird', 'cat', 'deer', 'dog', 
+class_names = ['airplane', 'automobile', 'bird', 'cat', 'deer', 'dog',
                'frog', 'horse', 'ship', 'truck']
 
 # Plot 25 random images from the training set with labels
@@ -112,16 +105,16 @@ test_images = (x_test/255.).astype(np.float32)
 test_labels = y_test
 ```
 
-### 2. Compiling the Model 
+### 2. Compiling the Model
 
 
 ```python
 def build_cnn_model():
-    
+
     cnn_model = tf.keras.Sequential([
 
         # Defining the first convolutional layer
-        tf.keras.layers.Conv2D(kernel_size=(3,3), filters=32, activation=tf.nn.relu, input_shape=(32, 32, 3)), 
+        tf.keras.layers.Conv2D(kernel_size=(3,3), filters=32, activation=tf.nn.relu, input_shape=(32, 32, 3)),
 
         # Defining the first max pooling layer
         tf.keras.layers.MaxPool2D(pool_size=(2,2)),
@@ -131,19 +124,19 @@ def build_cnn_model():
 
         # Defining the second max pooling layer
         tf.keras.layers.MaxPool2D(pool_size=(2,2)),
-             
+
         # Flattening image and label vectors
         tf.keras.layers.Flatten(),
-        
+
         # Defining the last Dense layer to output the classification probabilities
         tf.keras.layers.Dense(64, activation=tf.nn.relu),
 
         # Defining Dense layer to output classification probabilities
         tf.keras.layers.Dense(10, activation=tf.nn.softmax)
     ])
-    
+
     return cnn_model
-  
+
 cnn_model = build_cnn_model()
 ```
 
@@ -189,12 +182,12 @@ print(cnn_model.summary())
 
 
 ```python
-cnn_model.compile(optimizer=tf.keras.optimizers.Adam(learning_rate=1e-3), 
+cnn_model.compile(optimizer=tf.keras.optimizers.Adam(learning_rate=1e-3),
               loss='sparse_categorical_crossentropy',
               metrics=['sparse_categorical_crossentropy'])
 ```
 
-### 3. Training the Model 
+### 3. Training the Model
 
 
 ```python
@@ -268,7 +261,7 @@ It looks like the loss for the test and training data set declines after epoch e
 **Predictions**   
 Let's make a few predictions and check the test labels to see if the predictions are correct.
 
-Note, the model can be very confident with high prediction probabilities even for incorrect predictions. 
+Note, the model can be very confident with high prediction probabilities even for incorrect predictions.
 
 
 ```python
@@ -298,4 +291,3 @@ plt.show()
 
 
 ![png](Image%20Classification%20with%20CNN_files/Image%20Classification%20with%20CNN_27_0.png)
-
