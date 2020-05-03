@@ -4,7 +4,7 @@ title: About me
 subtitle: From data analyst to data scientist 
 ---
 
-My name is Eva Nguyen. I've had more than 4 years of experience in data analytics providing e-commerce businesses with actionable data insights. I've developed the skills to clean messy data with Python and ETL tools, query databases (Microsoft SQL Server, MySQL, Google BigQuery), create Tableau dashboards for my stakeholders, and present insights from data analysis. In addition to my time as an analyst, I managed a team of analysts, was awarded Employee of the Quarter, and worked cross-functionally with many teams (executive, senior leadership, marketing, product, IT, customer support).  
+I've had more than 4 years of experience in data analytics providing e-commerce businesses with actionable data insights. I've developed the skills to clean messy data with Python and ETL tools, query databases (Microsoft SQL Server, MySQL, Google BigQuery), create Tableau dashboards for my stakeholders, and present insights from data analysis. In addition to my time as an analyst, I managed a team of analysts, was awarded Employee of the Quarter, and worked cross-functionally with many teams (executive, senior leadership, marketing, product, IT, customer support).  
 
 After 4 years as a data analyst, I wanted to improve the decision-making process for stakeholders through predictive analytics. I enrolled in the Masters of Data Science program at the University of British Columbia to do just that. 
   
