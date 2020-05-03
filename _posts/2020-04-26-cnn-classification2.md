@@ -92,7 +92,7 @@ plt.show()
 ```
 
 
-![png](Image%20Classification%20with%20CNN_files/Image%20Classification%20with%20CNN_10_0.png)
+![png](/assets/img/CNN_files/CNN_files_1.png)
 
 
 **Noramlize training images and testing images**
