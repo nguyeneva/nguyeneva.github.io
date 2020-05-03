@@ -18,22 +18,22 @@ The purpose of the project is to develop a Convolutional Neural Network (CNN) to
 
 Data set retrieved from Keras package. The CIFAR-10 data set consists of 60,000 color images in 10 classes. The data set contains 50,000 training images and 10,000 test images.
 
-Image Classes:
+Image Classes:   
 
-Airplane
-Automobile
-Bird
-Cat
-Deer
-Dog
-Frog
-Horse
-Ship
-Truck
+Airplane   
+Automobile   
+Bird   
+Cat   
+Deer   
+Dog   
+Frog   
+Horse   
+Ship   
+Truck   
 
-Relevant data set links:
-https://keras.io/datasets/
-https://www.cs.toronto.edu/~kriz/cifar.html
+Relevant data set links:   
+https://keras.io/datasets/   
+https://www.cs.toronto.edu/~kriz/cifar.html   
 
-Results:
-A model with epoch of 10 and a batch size of 64 with a test loss of 1.5843.
+Results:   
+A model with epoch of 10 and a batch size of 64 with a test loss of 1.5843.   
