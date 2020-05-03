@@ -20,7 +20,7 @@ So far, I'v learned to implement the following statistical modeling techniques i
   - Clustering
     - K-Means
     - Gaussian Mixture
-    - Hierachial
+    - Hierarchal
 
 Currently, I am finishing my master's program in Los Angeles. I am working on a Capstone project with [UBC Urban Data Lab](https://urbandatalab.io/about/). We'll be implementing machine learning techniques for end-use classification and energy forecasting for UBC campus buildings. The Capstone project and my master's degree is expected to complete by June 2020. 
 
