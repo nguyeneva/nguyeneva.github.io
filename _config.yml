@@ -7,7 +7,7 @@ title: My website
 description: A virtual proof that I'm awesome
 
 # Your name to show in the footer
-author: "Eva Nguyen"
+author: Some Person
 
 # --- List of links in the navigation bar --- #
 
@@ -38,18 +38,20 @@ round-avatar: true
 # Uncomment the links you want to show and add your information to each one.
 # If you don't want to show a link to an RSS feed, set rss to "false".
 social-network-links:
-  email: "evnguyen@mail.ubc.ca"
-  github: nguyeneva
+  email: "someone@example.com"
+  facebook: deanattali
+  github: daattali
+  twitter: daattali
   rss: true
 #  reddit: yourname
- linkedin: eva-nguyen
+#  linkedin: daattali
 #  xing: yourname
 #  stackoverflow: "3943160/daattali"
 #  snapchat: deanat78
 #  instagram: deanat78
 #  youtube: user/deanat78
 #  spotify: yourname
- # telephone: +14159998888
+#  telephone: +14159998888
 #  steam: deanat78
 #  twitch: yourname
 #  yelp: yourname
@@ -206,5 +208,3 @@ plugins:
 
 # Beautiful Jekyll / Dean Attali
 # 2fc73a3a967e97599c9763d05e564189
-
-theme: jekyll-theme-slate
