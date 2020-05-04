@@ -5,7 +5,7 @@ subtitle:
 tags: [CNN, deep learning, python, tensorflow, matplotlib]
 ---
 
-The purpose of the project is to develop a Convolutional Neural Network (CNN) to classify images. We will be using the TensorFlow package and following similar steps in [MIT's Deep Learning lab](https://github.com/aamini/introtodeeplearning/blob/master/lab2/Part1_MNIST.ipynb).
+The project's purpose is to develop a Convolutional Neural Network (CNN) to classify images. We will be using the TensorFlow package and following similar steps in [MIT's Deep Learning lab](https://github.com/aamini/introtodeeplearning/blob/master/lab2/Part1_MNIST.ipynb).
 
 __Methodology__:
 
