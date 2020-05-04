@@ -221,7 +221,6 @@ modfit=cnn_model.fit(train_images, train_labels, batch_size=BATCH_SIZE, epochs=E
     Epoch 10/10
     50000/50000 [==============================] - 29s 573us/sample - loss: 0.2144 - sparse_categorical_crossentropy: 0.2144 - val_loss: 1.5843 - val_sparse_categorical_crossentropy: 1.5843
   
-/ 
   
 
 ### 4. Evaluate the Model
