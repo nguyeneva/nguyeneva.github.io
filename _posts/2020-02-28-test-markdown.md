@@ -59,6 +59,16 @@ var foo = function(x) {
 foo(3)
 {% endhighlight %}
 
+testing
+
+
+{% highlight javascript linenos %}
+var foo = function(x) {
+  return(x + 5);
+}
+foo(3)
+{% endhighlight %}
+
 ## Boxes
 You can add notification, warning and error boxes like this:
 
