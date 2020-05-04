@@ -94,7 +94,7 @@ plt.show()
 ![png](/assets/img/CNN_files/CNN_files_1.png)
 
 
-We normalize training images and testing images in order for pixel values to have the same range, [-1, 1].
+We normalize training images and testing images to set pixel values to the same range.
 
 {% highlight python linenos %}
 train_images = (x_train/255.).astype(np.float32)
@@ -237,7 +237,7 @@ test_loss = cnn_model.evaluate(x=test_images, y=test_labels)
 ```
 
 
-We plot the test and training loss by iteration. 
+We plot the test and training loss by iteration.
 
 
 {% highlight python linenos %}
