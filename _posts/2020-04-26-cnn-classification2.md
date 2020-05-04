@@ -8,6 +8,7 @@ tags: [CNN, deep learning, python, tensorflow, matplotlib]
 The purpose of the project is to develop a Convolutional Neural Network (CNN) to classify images. We will be using the TensorFlow package and following similar steps in [MIT's Deep Learning lab](https://github.com/aamini/introtodeeplearning/blob/master/lab2/Part1_MNIST.ipynb).
 
 __Methodology__:
+
 1. Load the data and flatten the input to feed into the model using tf.keras.layers.Flatten()
 2. Compile the model using model.compile()
 3. Train the model with the training data and training labels using model.fit()
@@ -29,11 +30,9 @@ Image Classes:
 * Ship
 * Truck
 
-
 Relevant data set links:  
 [https://keras.io/datasets/](https://keras.io/datasets/)    
 [https://www.cs.toronto.edu/~kriz/cifar.html](https://www.cs.toronto.edu/~kriz/cifar.html)
-
 
 
 __Results__:   
@@ -72,7 +71,7 @@ Let's visualize a few of the training images with corresponding training labels 
 The training and testing labels are numeric so we will need to
 pair them with a `class_names` vector.
 
-{% highlight python linenos %}
+<!-- {% highlight python linenos %}
 class_names = ['airplane', 'automobile', 'bird', 'cat', 'deer', 'dog',
                'frog', 'horse', 'ship', 'truck']
 
@@ -289,4 +288,4 @@ plt.show()
 {% endhighlight %}
 
 
-![png](/assets/img/CNN_files/CNN_files_3.png)
+![png](/assets/img/CNN_files/CNN_files_3.png) -->
