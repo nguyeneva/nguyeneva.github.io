@@ -38,7 +38,7 @@ __Results__:
 A model with epoch of 10 and a batch size of 64 with a test loss of 1.5843.
 
 ### 1. Loading Relevant Libraries and CIFAR-10 Data
-
+<!-- 
 {% highlight python linenos %}
 import tensorflow as tf
 import mitdeeplearning as mdl
@@ -47,7 +47,8 @@ import numpy as np
 import random
 from tqdm import tqdm
 from keras.datasets import cifar10
-{% endhighlight %}
+{% endhighlight %} -->
+
 <!--
 testing
 
