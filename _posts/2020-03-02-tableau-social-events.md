@@ -10,8 +10,6 @@ Data retrieved from [Peace Research Institute Oslo (PRIO)](https://www.prio.org/
 <iframe seamless frameborder="0" src="https://public.tableau.com/profile/eva.nguyen#!/vizhome/551_project/Dashboard1?:embed=yes&:display_count=yes&:showVizHome=no" width = '650' height = '450' scrolling='yes' ></iframe>    
 
 
-![png](/assets/img/CNN_files/CNN_files_3.png)
-
 <iframe src="https://public.tableau.com/views/GTSRB_Result_Viz/GTSRB?:embed=yes&:display_count=yes&:showVizHome=no" width = '650' height = '450'></iframe>
 
-<iframe seamless frameborder="0" src="https://public.tableau.com/views/GTSRB_Result_Viz/GTSRB?:embed=yes&:display_count=yes&:showVizHome=no" width = '650' height = '450'></iframe> 
+<iframe seamless frameborder="0" src="https://public.tableau.com/profile/eva.nguyen#!/vizhome/551_project/Dashboard1?:embed=yes&:display_count=yes&:showVizHome=no" width = '650' height = '450'></iframe>
