@@ -48,3 +48,23 @@ import random
 from tqdm import tqdm
 from keras.datasets import cifar10
 {% endhighlight %}
+
+{% highlight python linenos %}
+(x_train, y_train), (x_test, y_test) = cifar10.load_data()
+{% endhighlight %} -->
+
+{% endhighlight %}
+np.shape(x_train)
+{% endhighlight %}
+
+**Output:**
+```
+(50000, 32, 32, 3)
+```
+
+There are 50,000 32x32 colored images in the training set.
+
+Let's visualize a few of the training images with corresponding training labels below.
+
+The training and testing labels are numeric so we will need to
+pair them with a `class_names` vector.
