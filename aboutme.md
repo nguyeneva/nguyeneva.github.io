@@ -22,7 +22,7 @@ So far, I'v learned to implement the following statistical modeling techniques i
     - Gaussian Mixture
     - Hierarchal
 
-Currently, I am finishing my master's program in Los Angeles. I am working on a Capstone project with [UBC Urban Data Lab](https://urbandatalab.io/about/). We'll be implementing machine learning techniques for end-use classification and energy forecasting for UBC campus buildings. The Capstone project and my master's degree is expected to complete by June 2020. 
+Currently, I am finishing my master's program in Los Angeles. I am working on a Capstone project with [UBC Urban Data Lab](https://urbandatalab.io/about/). We'll be implementing machine learning techniques for end-use classification and energy forecasting for buildings on UBC campus. The Capstone project and my master's degree is expected to complete by June 2020. 
 
-When I am not cleaning data or debugging, I enjoy playing tennis, reading autobiographies, and cooking new recipes. Also, I care a great deal about the community I live in. I volunteer at local homeless shelters to assist with guest services. I organize monthly events to make and distribute lunches to homeless encampments.
+When I am not cleaning data or debugging, I enjoy playing tennis, reading autobiographies, and cooking new recipes. Also, I care a great deal about the community I live in. I volunteer at local homeless shelters to assist with guest services, and I organize monthly events to make and distribute lunches to homeless encampments.
 
