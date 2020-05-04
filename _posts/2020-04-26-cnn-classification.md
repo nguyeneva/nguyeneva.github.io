@@ -50,11 +50,11 @@ from keras.datasets import cifar10
 {% endhighlight %}
 
 
-
-
 {% highlight python linenos %}
 (x_train, y_train), (x_test, y_test) = cifar10.load_data()
 {% endhighlight %}
+
+Let's check the shape of the training set.
 
 {% highlight python linenos %}
 np.shape(x_train)
@@ -94,7 +94,7 @@ plt.show()
 ![png](/assets/img/CNN_files/CNN_files_1.png)
 
 
-**Noramlize training images and testing images**
+We normalize training images and testing images in order for pixel values to have the same range, [-1, 1].
 
 {% highlight python linenos %}
 train_images = (x_train/255.).astype(np.float32)
@@ -187,6 +187,8 @@ cnn_model.compile(optimizer=tf.keras.optimizers.Adam(learning_rate=1e-3),
               metrics=['sparse_categorical_crossentropy'])
 {% endhighlight %}
 
+
+
 ### 3. Training the Model
 
 {% highlight python linenos %}
@@ -222,24 +224,20 @@ modfit=cnn_model.fit(train_images, train_labels, batch_size=BATCH_SIZE, epochs=E
 
 ### 4. Evaluate the Model
 
-**Calculating the Test Loss**
+We can evaluate the model by calculating the Test Loss.
 
 
 {% highlight python linenos %}
 test_loss = cnn_model.evaluate(x=test_images, y=test_labels)
 {% endhighlight %}
 
-    10000/10000 [==============================] - 1s 148us/sample - loss: 1.5843 - sparse_categorical_crossentropy: 1.5843
+**Output**
+```10000/10000 [==============================] - 1s 148us/sample - loss: 1.5843 - sparse_categorical_crossentropy: 1.5843  
+[1.5843368148803711, 1.5843371]
+```
 
 
-
-
-
-    [1.5843368148803711, 1.5843371]
-
-
-
-**Plotting Test and Training Loss**
+We plot the test and training loss by iteration. 
 
 
 {% highlight python linenos %}
