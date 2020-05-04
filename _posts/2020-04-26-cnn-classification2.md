@@ -31,7 +31,7 @@ Image Classes:
 
 
 Relevant data set links:  
-[https://keras.io/datasets/](https://keras.io/datasets/)
+[https://keras.io/datasets/](https://keras.io/datasets/)    
 [https://www.cs.toronto.edu/~kriz/cifar.html](https://www.cs.toronto.edu/~kriz/cifar.html)
 
 
@@ -39,7 +39,7 @@ Relevant data set links:
 __Results__:   
 A model with epoch of 10 and a batch size of 64 with a test loss of 1.5843.
 
-### 1. Loading CIFAR-10 Data
+### 1. Loading Relevant Libraries and CIFAR-10 Data
 
 {% highlight python linenos %}
 import tensorflow as tf
@@ -51,29 +51,27 @@ from tqdm import tqdm
 from keras.datasets import cifar10
 {% endhighlight %}
 
-
-```python
+{% highlight python linenos %}
 (x_train, y_train), (x_test, y_test) = cifar10.load_data()
-```
+{% endhighlight %}
 
-```python
+{% endhighlight %}
 np.shape(x_train)
-```
+{% endhighlight %}
 
+**Output:**
 ```
 (50000, 32, 32, 3)
 ```
-
 
 There are 50,000 32x32 colored images in the training set.
 
 Let's visualize a few of the training images with corresponding training labels below.
 
+The training and testing labels are numeric so we will need to
+pair them with a `class_names` vector.
 
-```python
-""" The training and testing labels are numeric so we will need to
-pair them with a class_names vector """
-
+{% highlight python linenos %}
 class_names = ['airplane', 'automobile', 'bird', 'cat', 'deer', 'dog',
                'frog', 'horse', 'ship', 'truck']
 
@@ -89,7 +87,7 @@ for i in range(25):
     plt.yticks([])
     plt.grid(False)
 plt.show()
-```
+{% endhighlight %}
 
 
 ![png](/assets/img/CNN_files/CNN_files_1.png)
@@ -97,18 +95,17 @@ plt.show()
 
 **Noramlize training images and testing images**
 
-
-```python
+{% highlight python linenos %}
 train_images = (x_train/255.).astype(np.float32)
 train_labels = y_train
 test_images = (x_test/255.).astype(np.float32)
 test_labels = y_test
-```
+{% endhighlight %}
 
 ### 2. Compiling the Model
 
 
-```python
+{% highlight python linenos %}
 def build_cnn_model():
 
     cnn_model = tf.keras.Sequential([
@@ -138,16 +135,18 @@ def build_cnn_model():
     return cnn_model
 
 cnn_model = build_cnn_model()
-```
+{% endhighlight %}
 
 
-```python
+{% highlight python linenos %}
 # Initialize the model by passing some data through
 cnn_model.predict(train_images[[0]])
 
 # Print the summary of the layers in the model
 print(cnn_model.summary())
-```
+{% endhighlight %}
+
+**Output:**  
 
     Model: "sequential"
     _________________________________________________________________
@@ -174,29 +173,28 @@ print(cnn_model.summary())
     None
 
 
-#### Compiling the model with the parameters below.
+**Compiling the model with the parameters below.**
 
 - Adam optimizer   
 - Learning rate of .001      
 - Sparse Categorical Crossentropy Loss   
 
 
-```python
+{% highlight python linenos %}
 cnn_model.compile(optimizer=tf.keras.optimizers.Adam(learning_rate=1e-3),
               loss='sparse_categorical_crossentropy',
               metrics=['sparse_categorical_crossentropy'])
-```
+{% endhighlight %}
 
 ### 3. Training the Model
 
-
-```python
+{% highlight python linenos %}
 BATCH_SIZE=64
 EPOCHS=10
 
 modfit=cnn_model.fit(train_images, train_labels, batch_size=BATCH_SIZE, epochs=EPOCHS,
           validation_data=(test_images, test_labels))
-```
+{% endhighlight %}
 
     Train on 50000 samples, validate on 10000 samples
     Epoch 1/10
@@ -226,9 +224,9 @@ modfit=cnn_model.fit(train_images, train_labels, batch_size=BATCH_SIZE, epochs=E
 **Calculating the Test Loss**
 
 
-```python
+{% highlight python linenos %}
 test_loss = cnn_model.evaluate(x=test_images, y=test_labels)
-```
+{% endhighlight %}
 
     10000/10000 [==============================] - 1s 148us/sample - loss: 1.5843 - sparse_categorical_crossentropy: 1.5843
 
@@ -243,17 +241,17 @@ test_loss = cnn_model.evaluate(x=test_images, y=test_labels)
 **Plotting Test and Training Loss**
 
 
-```python
+{% highlight python linenos %}
 plt.plot(modfit.history['loss'])
 plt.plot(modfit.history['val_loss'])
 plt.ylabel('ModelLoss')
 plt.xlabel('Iteration')
 plt.legend(['train', 'test'], loc='upper left')
 plt.show()
-```
+{% endhighlight %}
 
 
-![png](Image%20Classification%20with%20CNN_files/Image%20Classification%20with%20CNN_24_0.png)
+![png](/assets/img/CNN_files/CNN_files_2.png)
 
 
 It looks like the loss for the test and training data set declines after epoch equals to 8.
@@ -264,7 +262,7 @@ Let's make a few predictions and check the test labels to see if the predictions
 Note, the model can be very confident with high prediction probabilities even for incorrect predictions.
 
 
-```python
+{% highlight python linenos %}
 test_images=np.reshape(test_images, (10000,32,32,3))
 
 # predictions on test data
@@ -287,7 +285,7 @@ for i in range(25):
     plt.grid(False)
     plt.axis(False)
 plt.show()
-```
+{% endhighlight %}
 
 
-![png](Image%20Classification%20with%20CNN_files/Image%20Classification%20with%20CNN_27_0.png)
+![png](/assets/img/CNN_files/CNN_files_3.png)
