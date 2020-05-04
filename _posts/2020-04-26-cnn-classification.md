@@ -51,7 +51,7 @@ from keras.datasets import cifar10
 
 {% highlight python linenos %}
 (x_train, y_train), (x_test, y_test) = cifar10.load_data()
-{% endhighlight %} -->
+{% endhighlight %} 
 
 {% endhighlight %}
 np.shape(x_train)
