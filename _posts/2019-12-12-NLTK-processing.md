@@ -5,28 +5,36 @@ subtitle:
 tags: [data manipulation, python, NLTK, pandas, numpy, matplotlib]
 ---
 
-### 1. Loading Relevant Libraries and Data
+The project's purpose is to clean and manipulate text data prior to applying machine learning techniques.
+
+### Dataset Description
+Two csv files are collected for mobile applications each week. One csv file includes the reviews and metadata for the reviews, and the other csv file includes details of each app.  
+
+The datasets are collected for approximately 80 mobile applications. The datasets live on a Google Drive [here](https://drive.google.com/drive/folders/1j1YdI5IVaK0PUHmZTMsTpOWXcnm8m2d7?usp=sharing).
+
+Below is a sample screenshot of the datasets' file structure after downloading it from Google Drive.
+
+### Step 1. Load Relevant Libraries and Datasets
 
 First, import relevant libraries.
 
 {% highlight python linenos %}
-import os
 import glob
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 {% endhighlight %}
 
+The files are stored within multiple folders on my local machine, and `glob` makes it easy to only pull review filenames. Some filenames had 'reviews' misspelled as 'reveiws', which required two glob commands.
 
-I have the files stored on my local machine. I use `glob` to only pull review filenames.
+![png](/assets/img/data_manipulation/folder_structure.png)
 
 {% highlight python linenos %}
-files1=glob.glob('/users/evanguyen/data_542/Dataset/**/*reveiws*.csv', recursive=True)
-files2=glob.glob('/users/evanguyen/data_542/Dataset/**/*reviews*.csv', recursive=True)
+files1=glob.glob('/Dataset/**/*reveiws*.csv', recursive=True)
+files2=glob.glob('/Dataset/**/*reviews*.csv', recursive=True)
 
 files_total=files1+files2
 {% endhighlight %}
-
 
 I create an empty list, read each csv into a data frame, and append each data frame into the list.
 
@@ -39,6 +47,8 @@ for file_ in files_total:
 {% endhighlight %}
 
 I want to label each app by their categories name. I will need to get the categories name from the filename using `split` and `__contains__`.
+
+Some of the filenames have different naming conventions, which required the first two complicated clauses in the if statement.
 
 {% highlight python linenos %}
 categories=[]
@@ -65,11 +75,36 @@ for file_ in files_total:
     review_df = pd.concat(list1)
 {% endhighlight %}
 
+Drop all duplicate rows.
+
+{% highlight python linenos %}
+review_df=review_df.drop_duplicates()
+without_duplicates=len(review_df)
+{% endhighlight %}
+
+
+Lastly, I add a unique ID index to the data set.
+
+{% highlight python linenos %}
+review_df['uniqueID']=range(1,len(review_df)+1)
+review_df=review_df.set_index('uniqueID')
+{% endhighlight %}
+
+Results of the final data frame.
+{% highlight python linenos %}
+review_df.head()
+{% endhighlight %}
+
+![png](/assets/img/data_manipulation/head_1.png)
+
+
 ### 2. Merging Two Data Sets
+
+Similar steps as above to pull only csv files with review metadata using `glob`. I read each csv into a data frame then into a list, add the categories name from the filename, merge all the data frames into one data frame, and add unique ID as the index.
 
 ```python
 ##################### pulling only detailed data set #####################
-files3=glob.glob('/users/evanguyen/data_542/Dataset/**/*all_detailed*.csv', recursive=True)
+files3=glob.glob('/Dataset/**/*all_detailed*.csv', recursive=True)
 
 list2 = []
 
@@ -117,17 +152,6 @@ detailed_df=detailed_df.set_index(['uniqueID'])
 ```
 
 
+
+
 ### 3. Data Cleaning
-Drop all duplicate rows.
-
-{% highlight python linenos %}
-review_df=review_df.drop_duplicates()
-without_duplicates=len(review_df)
-{% endhighlight %}
-
-Add unique IDs to the data frame and set it as the index.
-
-{% highlight python linenos %}
-review_df['uniqueID']=range(1,len(review_df)+1)
-review_df=review_df.set_index('uniqueID')
-{% endhighlight %}
