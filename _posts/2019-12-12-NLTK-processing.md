@@ -12,7 +12,7 @@ Two csv files are collected for mobile applications each week. One csv file incl
 
 The datasets are collected for approximately 80 mobile applications. The datasets live on a Google Drive [here](https://drive.google.com/drive/folders/1j1YdI5IVaK0PUHmZTMsTpOWXcnm8m2d7?usp=sharing).   
 
-Below is a sample screenshot of the datasets' file structure after downloading it from Google Drive.   
+Below is a sample screenshot of the datasets' file structure after downloading it from Google Drive. The dates represents when the data was pulled from the Google Play Store.
 
 ![png](/assets/img/data_manipulation/folder_structure.png)  
 
@@ -25,6 +25,8 @@ First, import relevant libraries.
 import glob
 import pandas as pd
 import numpy as np
+import nltk
+from itertools import groupby
 import matplotlib.pyplot as plt
 {% endhighlight %}
 
@@ -106,12 +108,27 @@ review_df.head()
 ![png](/assets/img/data_manipulation/head_1.png)
 
 ### 2. Data Manipulation
+I create a new column with my text manipulation called "text_mod".    
+
+I remove non-ASCII characters using `encode("ascii", "ignore")`.
+
+{% highlight python linenos %}
+review_df['text_mod']=review_df['text'].map(lambda x: str(x).encode("ascii", "ignore").decode('utf-8'))
+{% endhighlight %}
+
+I remove punctuations using regular expressions.   
+
+{% highlight python linenos %}
+review_df['text_mod'] = review_df['text_mod'].str.replace(r'[^\w\s]+', '')
+{% endhighlight %}
+
 There are application reviews with emojis and some are in other languages. I create a function to calculate the ratio of non-English words for each review. If the ratio is higher than 50%, I drop the review observation (not the entire row).   
 
 I use `nltk.corpous.words.words()` to create an English words dictionary for the comparison. I use `nltk.wordpunct_tokenize()` to separate each word by a space into a list.
 
+Please note, if you have not downloaded nltk package before, it'll require an additional command, `nltk.download()` after importing the package.   
+
 {% highlight python linenos %}
-import nltk
 words = set(nltk.corpus.words.words())
 def english(string):
     wordslist=nltk.wordpunct_tokenize(string)
@@ -128,12 +145,38 @@ def english(string):
         else:
             return string
 
-review_df_merged.text_mod=review_df_merged.text_mod.apply(lambda x: english(x))
-review_df_merged.drop(review_df_merged[review_df_merged.text_mod == 'NOTENGLISHDROP'].index, inplace=True)
+review_df.text_mod=review_df.text_mod.apply(lambda x: english(x))
+review_df.drop(review_df[review_df.text_mod == 'NOTENGLISHDROP'].index, inplace=True)
 {% endhighlight %}
 
-{% highlight python linenos %}
-{% endhighlight %}
+
+I remove words that have been misspelled with more than 2 characters.   
 
 {% highlight python linenos %}
+def extra_char(string):
+    if string is not None and len(string)>0:
+        count=0
+        wordslist=nltk.wordpunct_tokenize(string)
+        for w in wordslist:
+            if w.lower() in words or not w.isalpha():
+                return string
+            if w.lower() not in words:
+                groups = groupby(w)
+                count = [sum(1 for _ in group) for label, group in groups]
+                for c in count:
+                    if c>2:
+                        string=string.replace(str(w),'')
+                        string=string.strip()  
+                        return string
+    else:
+        return string
+
+review_df.text_mod=review_df.text_mod.apply(lambda x: extra_char(x))
+{% endhighlight %}
+
+I remove reviews that contain two or less number of words.   
+
+{% highlight python linenos %}
+word_count = review_df['text_mod'].str.split().str.len()
+review_df=review_df[~(word_count<=2)]
 {% endhighlight %}
