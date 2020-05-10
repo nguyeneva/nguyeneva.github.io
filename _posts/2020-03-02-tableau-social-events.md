@@ -11,6 +11,5 @@ Data retrieved from [Peace Research Institute Oslo (PRIO)](https://www.prio.org/
 <iframe seamless frameborder="0" src="https://public.tableau.com/views/urban_social_conflicts/Dashboard?:embed=yes&:display_count=yes&:showVizHome=no" width = '850' height = '850' scrolling='yes' ></iframe>    
 
 Example GIF of the dashboard below.   
-![GIF](/assets/img/tableau/tableau1.gif)
 
 ![GIF](/assets/img/tableau/tableau.gif)
