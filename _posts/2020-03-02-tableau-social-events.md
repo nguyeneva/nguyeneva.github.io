@@ -12,3 +12,5 @@ Data retrieved from [Peace Research Institute Oslo (PRIO)](https://www.prio.org/
 
 Example GIF of the dashboard below.   
 ![GIF](/assets/img/tableau/tableau1.gif)
+
+![GIF](/assets/img/tableau/tableau.gif)
