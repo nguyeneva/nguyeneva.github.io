@@ -99,7 +99,7 @@ review_df['uniqueID']=range(1,len(review_df)+1)
 review_df=review_df.set_index('uniqueID')
 {% endhighlight %}
 
-Results of the final data frame.   
+Results of the data frame.   
 
 {% highlight python linenos %}
 review_df.head()
@@ -122,7 +122,15 @@ I remove punctuations using regular expressions.
 review_df['text_mod'] = review_df['text_mod'].str.replace(r'[^\w\s]+', '')
 {% endhighlight %}
 
-There are application reviews with emojis and some are in other languages. I create a function to calculate the ratio of non-English words for each review. If the ratio is higher than 50%, I drop the review observation (not the entire row).   
+Let's examine our text processing so far for the first few reviews.    
+{% highlight python linenos %}
+pd.set_option('display.max_colwidth', None) # this stops the columns from truncating
+review_df[['text','text_mod']][0:5]
+{% endhighlight %}
+
+![png](/assets/img/data_manipulation/head_2.png)   
+
+There are application reviews with slang, emojis, misspelled words, and some are in other languages. I create a function to calculate the ratio of non-English words for each review. If the ratio is higher than 50%, I will label it "NOTENGLISHDROP", then I drop the review observation with that label (not the entire row).   
 
 I use `nltk.corpous.words.words()` to create an English words dictionary for the comparison. I use `nltk.wordpunct_tokenize()` to separate each word by a space into a list.
 
@@ -146,37 +154,24 @@ def english(string):
             return string
 
 review_df.text_mod=review_df.text_mod.apply(lambda x: english(x))
+{% endhighlight %}
+
+Below is a sample screenshot of the function applied to the text_mod field.      
+
+![png](/assets/img/data_manipulation/head_3.png)   
+
+Now we drop the reviews with the "NOTENGLISHDROP" label by making the text_mod field null.
+
+{% highlight python linenos %}
 review_df.drop(review_df[review_df.text_mod == 'NOTENGLISHDROP'].index, inplace=True)
 {% endhighlight %}
 
-
-I remove words that have been misspelled with more than 2 characters.   
-
-{% highlight python linenos %}
-def extra_char(string):
-    if string is not None and len(string)>0:
-        count=0
-        wordslist=nltk.wordpunct_tokenize(string)
-        for w in wordslist:
-            if w.lower() in words or not w.isalpha():
-                return string
-            if w.lower() not in words:
-                groups = groupby(w)
-                count = [sum(1 for _ in group) for label, group in groups]
-                for c in count:
-                    if c>2:
-                        string=string.replace(str(w),'')
-                        string=string.strip()  
-                        return string
-    else:
-        return string
-
-review_df.text_mod=review_df.text_mod.apply(lambda x: extra_char(x))
-{% endhighlight %}
-
-I remove reviews that contain two or less number of words.   
+Lastly, I remove reviews that contain two or less number of words.   
 
 {% highlight python linenos %}
 word_count = review_df['text_mod'].str.split().str.len()
 review_df=review_df[~(word_count<=2)]
 {% endhighlight %}
+
+Final output of our data frame. The next post is completing some Exploratory Data Analysis on the dataset.   
+![png](/assets/img/data_manipulation/head_4.png)
