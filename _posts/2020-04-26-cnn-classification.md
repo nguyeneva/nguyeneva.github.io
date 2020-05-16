@@ -185,7 +185,11 @@ print(cnn_model.summary())
 cnn_model.compile(optimizer=tf.keras.optimizers.Adam(learning_rate=1e-3),
               loss='sparse_categorical_crossentropy',
               metrics=['sparse_categorical_crossentropy'])
-{% endhighlight %}
+{% endhighlight %}    
+
+
+
+
 
 
 
@@ -219,7 +223,10 @@ modfit=cnn_model.fit(train_images, train_labels, batch_size=BATCH_SIZE, epochs=E
     Epoch 9/10
     50000/50000 [==============================] - 28s 568us/sample - loss: 0.2179 - sparse_categorical_crossentropy: 0.2179 - val_loss: 1.6101 - val_sparse_categorical_crossentropy: 1.6101
     Epoch 10/10
-    50000/50000 [==============================] - 29s 573us/sample - loss: 0.2144 - sparse_categorical_crossentropy: 0.2144 - val_loss: 1.5843 - val_sparse_categorical_crossentropy: 1.5843
+    50000/50000 [==============================] - 29s 573us/sample - loss: 0.2144 - sparse_categorical_crossentropy: 0.2144 - val_loss: 1.5843 - val_sparse_categorical_crossentropy: 1.5843   
+
+
+
 
 <break>  
 
