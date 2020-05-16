@@ -295,4 +295,4 @@ plt.show()
 
 ![png](/assets/img/CNN_files/CNN_files_3.png)
 
-The full jupyter notebook can be found on my GitHub [here]().
+The full jupyter notebook can be found on my GitHub [here](https://github.com/nguyeneva/projects/blob/master/Image%20Classification%20with%20CNN.ipynb).
