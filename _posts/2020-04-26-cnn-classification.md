@@ -274,7 +274,7 @@ predictions = cnn_model.predict(test_images)
 prediction = np.argmax(predictions, axis=1)
 
 # the probability of predictions
-prediction_probs = np.max(predictions, axis=1)*100
+prediction_probs = np.max(predictions, axis=1)*
 
 num_rows = 6
 num_cols = 6
@@ -290,6 +290,7 @@ for i in range(25):
     plt.axis(False)
 plt.show()
 {% endhighlight %}
+
 
 
 ![png](/assets/img/CNN_files/CNN_files_3.png)
