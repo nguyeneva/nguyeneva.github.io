@@ -221,7 +221,7 @@ modfit=cnn_model.fit(train_images, train_labels, batch_size=BATCH_SIZE, epochs=E
     Epoch 10/10
     50000/50000 [==============================] - 29s 573us/sample - loss: 0.2144 - sparse_categorical_crossentropy: 0.2144 - val_loss: 1.5843 - val_sparse_categorical_crossentropy: 1.5843
 
-<brea>  
+<break>  
 
 
 </break>
@@ -293,6 +293,6 @@ plt.show()
 
 
 
-![png](/assets/img/CNN_files/CNN_files_3.png)
+![png](/assets/img/CNN_files/CNN_files_3.png)   
 
 The full jupyter notebook can be found on my GitHub [here](https://github.com/nguyeneva/projects/blob/master/Image%20Classification%20with%20CNN.ipynb).
