@@ -173,5 +173,5 @@ word_count = review_df['text_mod'].str.split().str.len()
 review_df=review_df[~(word_count<=2)]
 {% endhighlight %}
 
-Final output of our data frame. The next post is completing some Exploratory Data Analysis on the dataset.   
+Final output of our data frame.
 ![png](/assets/img/data_manipulation/head_4.png)
