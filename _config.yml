@@ -13,9 +13,9 @@ author: Eva Nguyen
 
 navbar-links:
   About Me: "aboutme"
-  Resources:
-    - Beautiful Jekyll: "https://beautifuljekyll.com"
-    - Learn markdown: "https://www.markdowntutorial.com/"
+  # Resources:
+  #   - Beautiful Jekyll: "https://beautifuljekyll.com"
+  #   - Learn markdown: "https://www.markdowntutorial.com/"
 
 # --- Logo --- #
 
@@ -40,7 +40,7 @@ social-network-links:
   email: "evnguyen@mail.ubc.ca"
   github: nguyeneva
   linkedin: eva-nguyen
-  rss: true
+  # rss: true
 #  reddit: yourname
 #  xing: yourname
 #  stackoverflow: "3943160/daattali"
