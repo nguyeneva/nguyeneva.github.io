@@ -22,6 +22,8 @@ So far, I've learned to implement the following statistical modeling techniques 
     - Gaussian Mixture
     - Hierarchal
 
+### Current Work
 Currently, I'm completing my master's program in Los Angeles. I'm working on a Capstone project with [UBC Urban Data Lab](https://urbandatalab.io/about/). We'll be implementing machine learning techniques for end-use classification of sensors and energy forecasting for buildings on UBC campus. The Capstone project and my master's degree are expected to complete by June 2020.
 
+### Other Interests
 When I am not cleaning data or debugging, I enjoy playing tennis, reading autobiographies, and trying new recipes to cook. Also, I care a great deal about the community I live in. I volunteer at local homeless shelters to assist with guest services, and I organize monthly events to make and distribute lunches to homeless encampments.
