@@ -38,7 +38,7 @@ round-avatar: true
 # If you don't want to show a link to an RSS feed, set rss to "false".
 social-network-links:
   email: "evnguyen@mail.ubc.ca"
-  github: nguyeneva
+  github: nguyeneva/projects
   linkedin: eva-nguyen
   # rss: true
 #  reddit: yourname
