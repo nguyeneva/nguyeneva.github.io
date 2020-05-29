@@ -5,10 +5,13 @@ subtitle:
 tags: [R programming, RStudio, KNN, LDA, QDA, Confusion Matrix, F1 Score, LogLoss]
 ---
 
+### Which of the 3 models is the best for this data?
+Based on the evaluation metrics below, I would choose the k-nearest neighbors (K=3) method as the 'best' for this data. The reason is KNN outperforms for all metrics when comparing to LDA and QDA. The KNN has the highest values for Sensitivity, Recall, Precision, Specificity, and F1 Score. The KNN has the lowest values for Misclassficiation Rate and LogLoss.  
+
 ### Data Set
 The data set, `bank`, is from the gclus package in R. The data set contains six measurements made on 100 genuine Swiss banknotes and 100 counterfeit ones.
 
-**Columns:**  
+**Columns:**
 - **Status:** 0 = genuine, 1 = counterfeit
 - **Length:** Length of bill, mm
 - **Left:** Width of left edge, mm
@@ -16,9 +19,6 @@ The data set, `bank`, is from the gclus package in R. The data set contains six 
 - **Bottom:** Bottom margin width, mm
 - **Top:** Top margin width, mm
 - **Diagonal:** Length of image diagonal, mm
-
-### Which of the 3 models is the best for this data?
-Based on the evaluation metrics below, I would choose the k-nearest neighbors (K=3) method as the 'best' for this data. The reason is KNN outperforms for all metrics when comparing to LDA and QDA. The KNN has the highest values for Sensitivity, Recall, Precision, Specificity, and F1 Score. The KNN has the lowest values for Misclassficiation Rate and LogLoss.   
 
 ### LDA Evaluation Metrics
 {% highlight r linenos %}
