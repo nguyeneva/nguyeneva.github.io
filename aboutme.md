@@ -28,5 +28,5 @@ Currently, I'm completing my master's program in Los Angeles. I'm working on a C
 ### Other Interests
 When I am not cleaning data or debugging, I enjoy playing tennis, reading autobiographies, and trying new recipes to cook. Also, I care a great deal about the community I live in. I volunteer at local homeless shelters to assist with guest services, and I organize monthly events to make and distribute lunches to homeless encampments.
 
-**Community Involvement:**
-![](/assets/img/aboutme/1.jpg=50x50)![](/assets/img/aboutme/2.JPG)![](/assets/img/aboutme/3.jpg)
+Community Involvement:   
+![](/assets/img/aboutme/1.jpg =50x50)![](/assets/img/aboutme/2.JPG)![](/assets/img/aboutme/3.jpg)
