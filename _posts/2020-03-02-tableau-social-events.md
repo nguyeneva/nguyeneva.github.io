@@ -2,7 +2,7 @@
 layout: post
 title: Tableau Dashboard - Urban Social Events
 subtitle:
-tags: [tableau, data visualization, dashboard, business intelligence]
+tags: [tableau, data analysis, data visualization, dashboard, business intelligence]
 ---
 
 Analysis can be made from the interactive dashboard by identifying trends in total number of deaths, average length of social conflicts, and frequency of social conflicts by country.    
@@ -11,7 +11,6 @@ For example, you can see in **Figure 1** Baghdad has the largest number of death
 
 **Figure 1**  
 ![jpeg](/assets/img/tableau/1.jpeg)
-
 
 
 Data retrieved from [Peace Research Institute Oslo (PRIO)](https://www.prio.org/Data/Armed-Conflict/Urban-Social-Disorder/).    
