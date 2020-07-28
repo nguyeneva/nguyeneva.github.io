@@ -1,8 +1,8 @@
 ---
 layout: post
-title: Data Manipulation with Natural Language Processing
+title: Data Manipulation with Natural Language Processing (NLP)
 subtitle:
-tags: [data manipulation, python, NLTK, pandas, numpy, matplotlib]
+tags: [data manipulation, python, NLTK, NLP, pandas, numpy, matplotlib]
 ---
 
 The project's purpose is to clean and manipulate text data prior to applying machine learning techniques. The dataset contains errors to simulate data collection in the real world.   

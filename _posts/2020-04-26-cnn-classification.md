@@ -2,7 +2,7 @@
 layout: post
 title: Image Classification with Convolutional Neural Network
 subtitle:
-tags: [CNN, deep learning, statistical modeling, python, tensorflow, matplotlib, neural network]
+tags: [CNN, statistical modeling, machine learning, deep learning, python, tensorflow, matplotlib, neural network]
 ---
 
 The project's purpose is to develop a Convolutional Neural Network (CNN) to classify and predict images using Python's TensorFlow package.

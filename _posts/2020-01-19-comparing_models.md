@@ -2,7 +2,7 @@
 layout: post
 title: Comparing Machine Learning Models
 subtitle:
-tags: [R programming, RStudio, KNN, LDA, QDA, statistical modeling, supervised learning, confusion matrix, F1 score, logloss]
+tags: [R programming, RStudio, KNN, LDA, QDA, statistical modeling, machine learning, supervised learning, confusion matrix, F1 score, logloss]
 ---
 
 ### Which of the 3 models is the best for this data?
