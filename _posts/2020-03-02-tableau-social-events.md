@@ -6,7 +6,7 @@ tags: [tableau, data analysis, data visualization, dashboard, business intellige
 ---
 
 
-Example GIF of the dashboard below.   
+Example GIF of the dashboard I created below.   
 
 ![GIF](/assets/img/tableau/tableau.gif)
 
