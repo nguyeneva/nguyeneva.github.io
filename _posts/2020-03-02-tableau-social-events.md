@@ -17,7 +17,6 @@ Data retrieved from [Peace Research Institute Oslo (PRIO)](https://www.prio.org/
 
 "The Urban Social Disorder dataset contains information on urban social disorder events occurring in capitals and other major cities of the developing world for the 1960-2014 period."    
 
-<iframe seamless frameborder="0" src="https://public.tableau.com/views/urban_social_conflicts/Dashboard?:embed=yes&:display_count=yes&:showVizHome=no" width = '850' height = '850' scrolling='yes' ></iframe>    
 
 Example GIF of the dashboard below.   
 
